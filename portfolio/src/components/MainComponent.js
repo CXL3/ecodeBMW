@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Form from './FormComponent';
+import Contact from './ContactComponent';
 
 class Main extends Component {
+    
     render() {
-        return <Form /> ;
+        return <Contact /> ;
     }
 }
 export default Main;
