@@ -7,10 +7,10 @@ class Contact extends Component {
 
     this.state = {
       name: "",
-      Model: "",
-      Year: "",
+      model: "",
+      year: "",
       email: "",
-      message: false,
+      message: "",
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -18,9 +18,10 @@ class Contact extends Component {
   }
 
   handleInputChange(event) {
+    event.preventDefault();
     const target = event.target;
     const name = target.name;
-    const value = target.type === "checkbox" ? target.checked : target.value;
+    const value = target.value;
 
     this.setState({
       [name]: value,
@@ -43,7 +44,7 @@ class Contact extends Component {
           <Form onSubmit={this.handleSubmit}>
             <FormGroup row>
               <Label htmlFor="name" md={2}>
-                First Name
+                Your Name
               </Label>
               <Col md={10}>
                 <Input
@@ -54,6 +55,75 @@ class Contact extends Component {
                   value={this.state.name}
                   onChange={this.handleInputChange}
                 />
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Label htmlFor="name" md={2}>
+                Your Email
+              </Label>
+
+              <Col md={10}>
+                <Input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Your email"
+                  value={this.state.email}
+                  onChange={this.handleInputChange}
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Label htmlFor="name" md={2}>
+                Your BMW Model
+              </Label>
+              <Col md={10}>
+                <Input
+                  type="text"
+                  id="model"
+                  name="model"
+                  placeholder="Your BMW Model"
+                  value={this.state.model}
+                  onChange={this.handleInputChange}
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Label htmlFor="name" md={2}>
+                Production Year
+              </Label>
+              <Col md={10}>
+                <Input
+                  type="text"
+                  id="year"
+                  name="year"
+                  placeholder="Your Car’s Production Year"
+                  value={this.state.year}
+                  onChange={this.handleInputChange}
+                />
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Label htmlFor="feedback" md={2}>
+                Your Message
+              </Label>
+              <Col md={10}>
+                <Input
+                  type="textarea"
+                  id="message"
+                  name="message"
+                  rows="12"
+                  placeholder="How can I help you?"
+                  value={this.state.message}
+                  onChange={this.handleInputChange}
+                ></Input>
+              </Col>
+            </FormGroup>
+            <FormGroup row>
+              <Col md={{ size: 10, offset: 2 }}>
+                <Button type="submit" color="primary">
+                  Send
+                </Button>
               </Col>
             </FormGroup>
           </Form>
