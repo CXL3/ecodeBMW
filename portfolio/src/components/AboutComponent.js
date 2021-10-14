@@ -76,7 +76,4 @@ class About extends Component {
 }
 
 
-
-ReactDOM.render(<CitiesSlider slides={slides} />, document.querySelector('#app'));
-
 export default About;
