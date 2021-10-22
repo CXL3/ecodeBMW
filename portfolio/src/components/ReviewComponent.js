@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 
-class About extends Component {
+class Review extends Component {
  
   
   render() {
    
     return (
-      <div><p>About</p>
+      <div><p>Review</p>
       </div>
     );
   }
 }
 
 
-export default About;
+export default Review;
